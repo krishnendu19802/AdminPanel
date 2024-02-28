@@ -10,8 +10,8 @@ export default function Loginpage() {
     }
 
     return (
-        <div class="container">
-            <img src="src/assets/logo.webp" alt="error" class="admin-logo" />
+        <div className="container">
+            <img src="src/assets/logo.webp" alt="error" className="admin-logo" />
             <h2>Homaid Services</h2>
             <h2>Admin Panel</h2>
             <form id="signInForm"  method="post" onSubmit={handleSubmit}>
