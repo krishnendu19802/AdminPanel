@@ -1,20 +1,38 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function SideNavbar() {
-    
-  return (
-    <div>
-      <nav>
-                <div className="logo-name">
+    const navigate = useNavigate()
+    const [mode, alterMode] = useState(document.body.classList.contains('dark') ? true : false)
+    const [closed,alterClosed]=useState(document.body.classList.contains('closed')?true:false)
+    const handlemode = () => {
+        alterMode(mode=>!mode)
+        document.body.classList.toggle('dark')
+    }
+    const handlelogout = () => {
+        document.body.style.backgroundImage = `url("src/assets/30.webp")`
+        navigate('/')
+        // url("src/assets/30.webp");
+
+    }
+
+    const handleclose=()=>{
+        alterClosed(closed=>!closed)
+        document.body.classList.toggle('closed')
+    }
+    return (
+        <div>
+            <nav className={`${closed?'close':''}`}>
+                <div className="logo-name px-1">
                     <div className="logo-image">
                         <img src="src/assets/logo.webp" alt="" />
                     </div>
 
                     <span className="logo_name">HOMAID</span>
+                    <button className={`btn btn-lg text-${mode?'light':'secondary'} uil uil-bars ms-auto` } onClick={handleclose}></button>
                 </div>
 
-                <div className="menu-items">
+                <div className="menu-items ms-0">
                     <ul className="nav-links">
                         <li><Link to="/main">
                             <i className="uil uil-estate"></i>
@@ -43,24 +61,32 @@ export default function SideNavbar() {
                     </ul>
 
                     <ul className="logout-mode">
-                        <li><Link to="/">
-                            <i className="uil uil-signout"></i>
-                            <span className="link-name">Logout</span>
-                        </Link></li>
+                        <li >
+                            <a href="">
+                            <button className={`btn btn-lg text-${mode?'light':'secondary d-flex p-0' }`} style={{ 'background': 'transparent', 'border':'none' }} onClick={handlelogout}>
+                                <i className="uil uil-signout"></i>
+                                <span className="link-name">Logout</span>
+                            </button>
+                            </a>
+                        </li>
 
                         <li className="mode">
                             <Link to="#">
-                                <i className="uil uil-moon"></i>
+                                <i className={`uil uil-${mode?'sun':'moon'}`}></i>
                                 <span className="link-name">Dark Mode</span>
                             </Link>
 
-                            <div className="mode-toggle">
+                            {/* <div className="mode-toggle">
                                 <span className="switch"></span>
+                            </div> */}
+                            <div class=" mx-2 form-check form-switch">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={handlemode} checked={mode} />
+
                             </div>
                         </li>
                     </ul>
                 </div>
             </nav>
-    </div>
-  )
+        </div>
+    )
 }

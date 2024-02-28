@@ -8,6 +8,10 @@ body {
     height: 100vh;
     background-color: #f2f2f2;
     background-image: url("src/assets/30.webp");
+    box-sizing: border-box;
+  }
+  .outer{
+    height: 100%;
   }
   
   .container {

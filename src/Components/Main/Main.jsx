@@ -3,13 +3,16 @@ import { Link } from 'react-router-dom'
 import SideNavbar from '../SideNavbar/SideNavbar'
 
 export default function Main() {
+    const handlecollapse=()=>{
+        document.body.classList.toggle('close')
+    }
 
     return (
         <div >
             <SideNavbar/>
 
             <section className="dashboard ">
-                <div className="top">
+                <div className="top" onClick={handlecollapse}>
                     <i className="uil uil-bars sidebar-toggle"></i>
 
                     <div className="search-box">

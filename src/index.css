@@ -29,6 +29,8 @@
 body{
     min-height: 100vh;
     background-color: var(--primary-color);
+    
+
 }
 body.dark{
     --primary-color: #3A3B3C;
@@ -97,7 +99,7 @@ nav .logo-name .logo_name{
     font-size: 22px;
     font-weight: 600;
     color: var(--text-color);
-    margin-left: 14px;
+    margin-left: 2px;
     transition: var(--tran-05);
 }
 nav.close .logo_name{
@@ -109,8 +111,15 @@ nav .menu-items{
     height: calc(100% - 90px);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: left; */
+    align-items: flex-start;
+
 }
+
+.menu-items ul{
+    padding: 0;
+}
+
 .menu-items li{
     list-style: none;
 }
@@ -161,7 +170,7 @@ body.dark .nav-links li a:hover .link-name{
     color: var(--text-color);
 }
 .menu-items .logout-mode{
-    padding-top: 10px;
+    padding-top: 20px;
     border-top: 1px solid var(--border-color);
 }
 .menu-items .mode{
@@ -412,6 +421,9 @@ nav.close ~ .dashboard .top{
     }
 }
 @media (max-width: 560px) {
+    nav{
+        width: 100px;
+    }
     .dash-content .boxes .box{
         width: 100% ;
     }
