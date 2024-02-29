@@ -76,7 +76,7 @@ nav{
     background-color: var(--panel-color);
     border-right: 1px solid var(--border-color);
     /* transition: var(--tran-05); */
-    transition: 0.5 width;
+    transition: 0.5s width;
 }
 nav.close{
     width: 73px;
@@ -85,10 +85,7 @@ nav .logo-name{
     display: flex;
     align-items: center;
 }
-/* nav.close .logo-name{
-    display: flex;
-    flex-direction: column;
-} */
+
 nav .logo-image{
     display: flex;
     justify-content: center;
@@ -112,6 +109,7 @@ nav.close .logo_name, nav.close .logo-image{
     pointer-events: none;
     
 }
+
 
 nav .menu-items{
     margin-top: 40px;
@@ -183,10 +181,7 @@ body.dark .nav-links li a:hover i,
 body.dark .nav-links li a:hover .link-name{
     color: var(--text-color);
 }
-/* .menu-items .logout-mode{
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-} */
+
 nav div.menu-items hr{
     height: 1px ;
     width:80%;
@@ -234,15 +229,15 @@ body.dark .switch:before{
 
 .dashboard{
     position: relative;
-    /* left: 250px; */
+    left: 250px;
     background-color: var(--panel-color);
     min-height: 100vh;
     width: calc(100% - 250px);
     padding: 10px 14px;
-    transition: 0.5s width;
+    transition: 0.5s left;
 }
 nav.close ~ .dashboard{
-    /* left: 73px; */
+    left: 73px;
     width: calc(100% - 73px);
     }
 .dashboard .top{
@@ -273,10 +268,12 @@ nav.close ~ .dashboard .top{
     /* max-width: 600px; */
     max-width: 70%;
     width: 100%;
-    /* margin-left: auto; */
+    
 }
 .top-part{
     display: flex;
+    font-size: larger;
+    
     
 }
 .overview .search-box input{
@@ -334,10 +331,11 @@ nav.close ~ .dashboard .top{
     font-size: 24px;
 }
 .dash-content .title .text{
-    font-size: 24px;
+    font-size: 2rem;
     font-weight: 500;
     color: var(--text-color);
-    margin-left: 10px;
+    /* margin-left: 10px; */
+    text-align: center;
 }
 .dash-content .boxes{
     display: flex;
@@ -431,9 +429,11 @@ nav.close ~ .dashboard .top{
     nav ~ .dashboard{
         left: 73px;
         width: calc(100% - 73px);
+    min-height: 100vh;
+
     }
     nav.close ~ .dashboard{
-        /* left: 250px; */
+        left: 250px;
         width: calc(100% - 250px);
     }
     nav ~ .dashboard .top{
@@ -511,10 +511,21 @@ nav.close ~ .dashboard .top{
         pointer-events: none;
         
     }
+    .top-part{
+    margin-top: 20vh;
+
+    }
 }
 @media (max-width: 400px) {
     nav{
-        width: 0px;
+        width: 73px;
+        
+        
+    }
+    
+    .logo-name button{
+        z-index: 1;
+        /* width: 20px; */
     }
     nav.close{
         width: 73px;
@@ -536,7 +547,7 @@ nav.close ~ .dashboard .top{
         pointer-events: none;
     }
     nav ~ .dashboard{
-        left: 0;
+        left: 73px;
         width: 100%;
         /* margin-left: a; */
     }
@@ -551,6 +562,10 @@ nav.close ~ .dashboard .top{
     nav.close ~ .dashboard .top{
         left: 0;
         width: 100%;
+    }
+    .search-box input{
+        opacity: 0;
+        pointer-events: none;
     }
 }
 

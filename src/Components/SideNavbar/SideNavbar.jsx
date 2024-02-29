@@ -22,10 +22,10 @@ export default function SideNavbar() {
     }
     return (
         // <div>
-            <nav className={`${closed ? 'close' : ''} me-auto`}>
+            <nav className={`${closed ? 'close' : ''} `}>
                 <div className="logo-name px-1">
                     {/* {closed ||(window.innerWidth<1000)  && <button className={`btn btn-lg text-${mode ? 'light' : 'secondary'} uil uil-bars px-2`} onClick={handleclose}></button>} */}
-                    <button className={`btn btn-lg text-${mode ? 'light' : 'secondary'} uil uil-bars px-2`} onClick={handleclose}></button>
+                    <button className={`btn btn-lg text-${mode ? 'light' : 'secondary'} uil uil-bars px-2 `} onClick={handleclose} style={{'width':'50px'}}></button>
                     <div className="logo-image">
                         <img src="src/assets/logo.webp" alt="" />
                     </div>

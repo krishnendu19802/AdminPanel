@@ -8,10 +8,10 @@ export default function Main() {
     }
 
     return (
-        <div >
+        <div>
             <SideNavbar />
-
-            <section className="dashboard ms-auto">
+           
+            <section className={`dashboard `} >
                 {/* <i className="uil uil-bars sidebar-toggle"></i> */}
                 {/* <div className="top " onClick={handlecollapse}>
 
@@ -23,17 +23,17 @@ export default function Main() {
 
                 </div> */}
 
-                <div className="dash-content  ">
+                <div className="dash-content  " >
                     <div className="overview">
-                        <div className="top-part mb-2 ">
+                        <div className="top-part fixed mb-2  ">
                             <div className="title me-auto">
                                 <i className="uil uil-tachometer-fast-alt"></i>
                                 <span className="text">Dashboard</span>
                             </div>
-                            <div className="search-box pt-4 me-0  d-flex align-items-center justify-content-end">
+                            { <div className="search-box pt-4 me-0  d-flex align-items-center justify-content-end ms-auto ps-5 my-3">
                                 <i className="uil uil-search mx-2"></i>
                                 <input type="text" placeholder="Search here..." />
-                            </div>
+                            </div>}
                         </div>
 
                         <div className="boxes">
