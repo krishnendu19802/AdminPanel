@@ -3,31 +3,37 @@ import { Link } from 'react-router-dom'
 import SideNavbar from '../SideNavbar/SideNavbar'
 
 export default function Main() {
-    const handlecollapse=()=>{
+    const handlecollapse = () => {
         document.body.classList.toggle('close')
     }
 
     return (
         <div >
-            <SideNavbar/>
+            <SideNavbar />
 
-            <section className="dashboard ">
-                <div className="top" onClick={handlecollapse}>
-                    <i className="uil uil-bars sidebar-toggle"></i>
+            <section className="dashboard ms-auto">
+                {/* <i className="uil uil-bars sidebar-toggle"></i> */}
+                {/* <div className="top " onClick={handlecollapse}>
 
-                    <div className="search-box">
+                    <div className="search-box ">
                         <i className="uil uil-search"></i>
                         <input type="text" placeholder="Search here..." />
                     </div>
 
-                    {/* <!--<img src="images/profile.jpg" alt="">--> */}
-                </div>
 
-                <div className="dash-content">
+                </div> */}
+
+                <div className="dash-content container-fluid ">
                     <div className="overview">
-                        <div className="title">
-                            <i className="uil uil-tachometer-fast-alt"></i>
-                            <span className="text">Dashboard</span>
+                        <div className="top-part mb-2 ">
+                            <div className="title me-auto">
+                                <i className="uil uil-tachometer-fast-alt"></i>
+                                <span className="text">Dashboard</span>
+                            </div>
+                            <div className="search-box pt-4 me-0  d-flex align-items-center justify-content-end">
+                                <i className="uil uil-search mx-2"></i>
+                                <input type="text" placeholder="Search here..." />
+                            </div>
                         </div>
 
                         <div className="boxes">

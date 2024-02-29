@@ -4,9 +4,9 @@ import { Link, useNavigate } from 'react-router-dom'
 export default function SideNavbar() {
     const navigate = useNavigate()
     const [mode, alterMode] = useState(document.body.classList.contains('dark') ? true : false)
-    const [closed,alterClosed]=useState(document.body.classList.contains('closed')?true:false)
+    const [closed, alterClosed] = useState(document.body.classList.contains('closed') ? true : false)
     const handlemode = () => {
-        alterMode(mode=>!mode)
+        alterMode(mode => !mode)
         document.body.classList.toggle('dark')
     }
     const handlelogout = () => {
@@ -16,20 +16,21 @@ export default function SideNavbar() {
 
     }
 
-    const handleclose=()=>{
-        alterClosed(closed=>!closed)
+    const handleclose = () => {
+        alterClosed(closed => !closed)
         document.body.classList.toggle('closed')
     }
     return (
-        <div>
-            <nav className={`${closed?'close':''}`}>
+        // <div>
+            <nav className={`${closed ? 'close' : ''}`}>
                 <div className="logo-name px-1">
+                    {closed && <button className={`btn btn-lg text-${mode ? 'light' : 'secondary'} uil uil-bars px-2`} onClick={handleclose}></button>}
                     <div className="logo-image">
                         <img src="src/assets/logo.webp" alt="" />
                     </div>
 
                     <span className="logo_name">HOMAID</span>
-                    <button className={`btn btn-lg text-${mode?'light':'secondary'} uil uil-bars ms-auto` } onClick={handleclose}></button>
+                    {!closed && <button className={`btn btn-lg text-${mode ? 'light' : 'secondary'} uil uil-bars ms-auto`} onClick={handleclose}></button>}
                 </div>
 
                 <div className="menu-items ms-0">
@@ -59,34 +60,34 @@ export default function SideNavbar() {
                             <span className="link-name">Settings</span>
                         </Link></li>
                     </ul>
-
-                    <ul className="logout-mode">
+                    <hr className='dark ms-1 my-2 ' />
+                    <ul className="logout-mode p-0 py-3">
                         <li >
                             <a href="">
-                            <button className={`btn btn-lg text-${mode?'light':'secondary d-flex p-0' }`} style={{ 'background': 'transparent', 'border':'none' }} onClick={handlelogout}>
-                                <i className="uil uil-signout"></i>
-                                <span className="link-name">Logout</span>
-                            </button>
+                                <button className={`btn btn-lg text-${mode ? 'light' : 'secondary'} d-flex p-0 `} style={{ 'background': 'transparent', 'border': 'none', }} onClick={handlelogout}>
+                                    <i className="uil uil-signout"></i>
+                                    <span className="link-name">Logout</span>
+                                </button>
                             </a>
                         </li>
 
-                        <li className="mode">
+                        <li className="mode" onClick={handlemode}>
                             <Link to="#">
-                                <i className={`uil uil-${mode?'sun':'moon'}`}></i>
+                                <i className={`uil uil-${mode ? 'sun' : 'moon'} t`}></i>
                                 <span className="link-name">Dark Mode</span>
                             </Link>
 
                             {/* <div className="mode-toggle">
                                 <span className="switch"></span>
                             </div> */}
-                            <div class=" mx-2 form-check form-switch">
-                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={handlemode} checked={mode} />
+                            <div class=" mx-2 form-check form-switch" >
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" checked={mode} />
 
                             </div>
                         </li>
                     </ul>
                 </div>
             </nav>
-        </div>
+        // </div>
     )
 }
