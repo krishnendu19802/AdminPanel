@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 export default function SideNavbar() {
     const navigate = useNavigate()
     const [mode, alterMode] = useState(document.body.classList.contains('dark') ? true : false)
-    const [closed, alterClosed] = useState(document.body.classList.contains('closed') ? true : false)
+    const [closed, alterClosed] = useState(document.body.classList.contains('closed')? true : false)
     const handlemode = () => {
         alterMode(mode => !mode)
         document.body.classList.toggle('dark')
@@ -22,15 +22,16 @@ export default function SideNavbar() {
     }
     return (
         // <div>
-            <nav className={`${closed ? 'close' : ''}`}>
+            <nav className={`${closed ? 'close' : ''} me-auto`}>
                 <div className="logo-name px-1">
-                    {closed && <button className={`btn btn-lg text-${mode ? 'light' : 'secondary'} uil uil-bars px-2`} onClick={handleclose}></button>}
+                    {/* {closed ||(window.innerWidth<1000)  && <button className={`btn btn-lg text-${mode ? 'light' : 'secondary'} uil uil-bars px-2`} onClick={handleclose}></button>} */}
+                    <button className={`btn btn-lg text-${mode ? 'light' : 'secondary'} uil uil-bars px-2`} onClick={handleclose}></button>
                     <div className="logo-image">
                         <img src="src/assets/logo.webp" alt="" />
                     </div>
 
                     <span className="logo_name">HOMAID</span>
-                    {!closed && <button className={`btn btn-lg text-${mode ? 'light' : 'secondary'} uil uil-bars ms-auto`} onClick={handleclose}></button>}
+                    {/* {!closed  && <button className={`btn btn-lg text-${mode ? 'light' : 'secondary'} uil uil-bars ms-auto`} onClick={handleclose}></button>} */}
                 </div>
 
                 <div className="menu-items ms-0">

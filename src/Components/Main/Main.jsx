@@ -23,7 +23,7 @@ export default function Main() {
 
                 </div> */}
 
-                <div className="dash-content container-fluid ">
+                <div className="dash-content  ">
                     <div className="overview">
                         <div className="top-part mb-2 ">
                             <div className="title me-auto">
