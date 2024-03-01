@@ -12,17 +12,7 @@ export default function Main() {
             <SideNavbar />
            
             <section className={`dashboard `} >
-                {/* <i className="uil uil-bars sidebar-toggle"></i> */}
-                {/* <div className="top " onClick={handlecollapse}>
-
-                    <div className="search-box ">
-                        <i className="uil uil-search"></i>
-                        <input type="text" placeholder="Search here..." />
-                    </div>
-
-
-                </div> */}
-
+                
                 <div className="dash-content  " >
                     <div className="overview">
                         <div className="top-part fixed mb-2  ">

@@ -21,9 +21,9 @@ body {
     margin-top: 20px;
 }
 
-h1, h2 {
+/* h1, h2 {
     color: #333;
-}
+} */
 
 canvas {
     max-width: 100%;

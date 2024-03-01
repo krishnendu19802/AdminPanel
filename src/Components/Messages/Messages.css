@@ -1,11 +1,11 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
-.container {
+.container-messages {
     max-width: 800px;
     margin: 50px auto;
     background-color: #fff;
@@ -50,4 +50,64 @@ h1 {
 
 #sendButton:hover {
     background-color: #2980b9;
+} */
+
+.main-box{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    overflow:visible;
+}
+.container-messages{
+    /* background-color: pink; */
+    /* max-width: 00px; Added spaces around the minus sign */
+    position: relative;
+
+}
+
+.heading{
+    height: 80px;
+}
+.messages-body{
+    height: calc(100% - 80px);
+    /* background-color: aqua; */
+    overflow: auto;
+}
+
+.indv-message{
+    height: 2rem;
+}
+.dark .main-box{
+    background-color: #3A3B3C;
+}
+.dark .messages-body{
+    background-color: #4D4C4C;
+    color: #CCC;
+}
+nav ~ .main-box .container-messages {
+    left: 450px;
+    transition: 1s all;
+    right: 0;
+    height: 70vh;
+    width: 45%;
+}
+nav.close ~ .main-box .container-messages{
+    /* width:calc(100%-73px); */
+    left:400px;
+    width: 50%;
+    /* transform: scaleX(2); */
+}
+@media screen and (max-width: 1000px) {
+    nav.close ~ .main-box .container-messages{
+        /* width:calc(100%-250px); */
+        left:300px;
+        width: 45%;
+     }
+     nav ~ .main-box .container-messages{
+         /* width:calc(100%-73px); */
+         width: 50%;
+         left:250px;
+     }
 }
