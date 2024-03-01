@@ -1,0 +1,50 @@
+.settings-box{
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    overflow:visible;
+}
+.container-settings{
+    position: relative;
+    width:80%;
+    height: 100%;
+    transition: 1s all;
+}
+nav ~ .settings-box .container-settings{
+    left: 250px;
+}
+nav.close ~ .settings-box .container-settings{
+    width: 90%;
+    left: 73px;
+}
+.change-content input, .current-content p{
+    width: 50%;
+}
+.dark .settings-box{
+    background-color: #3A3B3C;
+}
+.user-settings div{
+    display: flex;
+}
+.dark .container-settings{
+    background-color: #4D4C4C;
+    color: #CCC;
+}
+
+@media screen and (max-width: 1000px) {
+    nav.close ~ .settings-box .container-settings{
+        /* width:calc(100%-250px); */
+        left:250px;
+        width: 45%;
+     }
+     nav ~ .settings-box .container-settings{
+         /* width:calc(100%-73px); */
+         width: 70%;
+         left:73px;
+     }
+     .user-settings div{
+        display: block;
+    }
+}
