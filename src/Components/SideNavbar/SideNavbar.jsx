@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 export default function SideNavbar() {
     const navigate = useNavigate()
@@ -15,6 +15,8 @@ export default function SideNavbar() {
         // url("src/assets/30.webp");
 
     }
+    const loc=useLocation()
+    console.log(loc)
 
     const handleclose = () => {
         alterClosed(closed => !closed)
@@ -37,28 +39,28 @@ export default function SideNavbar() {
                 <div className="menu-items ms-0">
                     <ul className="nav-links">
                         <li><Link to="/main">
-                            <i className="uil uil-estate"></i>
-                            <span className="link-name">Dahsboard</span>
+                            <i className={`uil uil-estate ${loc.pathname==='/main'?'text-primary':''}`}></i>
+                            <span className={`link-name ${loc.pathname==='/main'?'text-primary':''}`}>Dahsboard</span>
                         </Link></li>
                         <li><Link to="/leaderboard">
-                            <i className="uil uil-files-landscapes"></i>
-                            <span className="link-name">Leaderboard</span>
+                            <i className={`uil uil-files-landscapes ${loc.pathname==='/leaderboard'?'text-primary':''}`}></i>
+                            <span className={`link-name ${loc.pathname==='/leaderboard'?'text-primary':''}`}>Leaderboard</span>
                         </Link></li>
                         <li><Link to="/analytics">
-                            <i className="uil uil-chart"></i>
-                            <span className="link-name">Analytics</span>
+                            <i className={`uil uil-chart ${loc.pathname==='/analytics'?'text-primary':''}`}></i>
+                            <span className={`link-name ${loc.pathname==='/analytics'?'text-primary':''}`}>Analytics</span>
                         </Link></li>
                         <li><Link to="/salesreport">
-                            <i className="uil uil-chart"></i>
-                            <span className="link-name">Sales Report</span>
+                            <i className={`uil uil-chart ${loc.pathname==='/salesreport'?'text-primary':''}`}></i>
+                            <span className={`link-name ${loc.pathname==='/salesreport'?'text-primary':''}`}>Sales Report</span>
                         </Link></li>
                         <li><Link to="/messages">
-                            <i className="uil uil-message"></i>
-                            <span className="link-name">Messages</span>
+                            <i className={`uil uil-message ${loc.pathname==='/messages'?'text-primary':''}`}></i>
+                            <span className={`link-name ${loc.pathname==='/messages'?'text-primary':''}`}>Messages</span>
                         </Link></li>
                         <li><Link to="/settings">
-                            <i className="uil uil-setting"></i>
-                            <span className="link-name">Settings</span>
+                            <i className={`uil uil-setting ${loc.pathname==='/settings'?'text-primary':''}`}></i>
+                            <span className={`link-name ${loc.pathname==='/settings'?'text-primary':''}`}>Settings</span>
                         </Link></li>
                     </ul>
                     <hr className='dark ms-1 my-2 ' />

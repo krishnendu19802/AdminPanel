@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import SideNavbar from '../SideNavbar/SideNavbar'
-
+import './Main.css'
 export default function Main() {
     const handlecollapse = () => {
         document.body.classList.toggle('close')
@@ -21,7 +21,7 @@ export default function Main() {
                                 <span className="text">Dashboard</span>
                             </div>
                             { <div className="search-box pt-4 me-0  d-flex align-items-center justify-content-end ms-auto ps-5 my-3">
-                                <i className="uil uil-search mx-2"></i>
+                                <i className="uil uil-search mx-2 "></i>
                                 <input type="text" placeholder="Search here..." />
                             </div>}
                         </div>
