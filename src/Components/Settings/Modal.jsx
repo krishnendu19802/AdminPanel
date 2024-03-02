@@ -3,7 +3,7 @@ import React from 'react'
 export default function Modal(props) {
     console.log(props.username)
     return (
-        <div>
+        <div className='main-modal'>
 
             {/* <button type="button" class="btn btn-primary" >
                 Launch static backdrop modal

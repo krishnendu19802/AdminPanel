@@ -6,6 +6,10 @@
     align-items: center;
     overflow:visible;
 }
+.accordion-body{
+    width: 100%;
+}
+
 .container-settings{
     position: relative;
     width:80%;
@@ -28,7 +32,7 @@ nav.close ~ .settings-box .container-settings{
 .user-settings div{
     display: flex;
 }
-.dark .container-settings{
+.dark .user-settings,.dark .general-settings{
     background-color: #4D4C4C;
     color: #CCC;
 }
