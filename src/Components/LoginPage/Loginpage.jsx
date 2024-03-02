@@ -11,7 +11,7 @@ export default function Loginpage() {
     }
 
     return (
-        <div className="outer" >
+        <div className="outer overflow-hidden" >
             <div className="container">
                 <img src="src/assets/logo.webp" alt="error" className="admin-logo" />
                 <h2>Homaid Services</h2>

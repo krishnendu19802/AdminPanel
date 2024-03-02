@@ -10,7 +10,7 @@ export default function SideNavbar() {
         document.body.classList.toggle('dark')
     }
     const handlelogout = () => {
-        document.body.style.backgroundImage = `url("src/assets/30.webp")`
+        
         navigate('/')
         // url("src/assets/30.webp");
 

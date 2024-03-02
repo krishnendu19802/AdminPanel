@@ -34,7 +34,7 @@ export default function Settings() {
       <SideNavbar />
       <div className={`settings-box  px-0 mt-1 d-flex align-items-center overflow-auto `}>
         <div className="container-settings accordion p-5  ">
-          <div className="user-settings accordion-item rounded shadow p-2">
+          <div className="user-settings accordion-item rounded shadow  p-2">
             <h2 class="accordion-header">
               <button class="accordion-button fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                 Personal settings
