@@ -42,9 +42,9 @@ export default function SideNavbar() {
                             <i className={`uil uil-estate ${loc.pathname==='/main'?'text-primary':''}`}></i>
                             <span className={`link-name ${loc.pathname==='/main'?'text-primary':''}`}>Dahsboard</span>
                         </Link></li>
-                        <li><Link to="/leaderboard">
-                            <i className={`uil uil-files-landscapes ${loc.pathname==='/leaderboard'?'text-primary':''}`}></i>
-                            <span className={`link-name ${loc.pathname==='/leaderboard'?'text-primary':''}`}>Leaderboard</span>
+                        <li><Link to="/maiddetails">
+                            <i className={`uil uil-files-landscapes ${loc.pathname==='/maiddetails'?'text-primary':''}`}></i>
+                            <span className={`link-name ${loc.pathname==='/maiddetails'?'text-primary':''}`}>Maiddetails</span>
                         </Link></li>
                         <li><Link to="/analytics">
                             <i className={`uil uil-chart ${loc.pathname==='/analytics'?'text-primary':''}`}></i>
