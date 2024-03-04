@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Messages.css'
 import SideNavbar from '../SideNavbar/SideNavbar'
+import BottomNavbar from '../BottomNavbar/BottomNavbar'
 export default function Messages() {
 
     const [mode,setmode]=useState(document.body.classList.contains('dark') ? true : false)
@@ -13,7 +14,9 @@ export default function Messages() {
         { 'name': 'Rohit', 'logo': 'R' },
         { 'name': 'Sachin', 'logo': 'S' },
         { 'name': 'Himesh', 'logo': 'H' },
-        { 'name': 'Ashwin', 'logo': 'A' }
+        { 'name': 'Ashwin', 'logo': 'A' },
+        { 'name': 'Paila', 'logo': 'P' },
+
 
 
     ]
@@ -35,22 +38,9 @@ export default function Messages() {
     }
     return (
         <>
-            <SideNavbar />
-            {/* <div className="container">
-                <h1>Messages</h1>
+            {window.innerWidth>560 && <SideNavbar />}
 
-                <div id="chatContainer">
-                    <div className="chat" id="messageArea">
-                        
-                    </div>
-                    <div className="input-container">
-                        <input type="text" id="messageInput" placeholder="Type your message..." />
-                        <button id="sendButton">Send</button>
-                    </div>
-                </div>
-            </div> */}
-
-            <div className={`main-box mx- px-0 mt-1  `}>
+            <div className={`main-box mx- px-2   `}>
                 <div className="container-messages rounded-3 shadow-lg  ">
                     <div className="heading bg-primary d-flex justify-content-center align-items-center  rounded-top p-3 text-light">
                         <h2 className="message-heading m-0">Messages</h2>
@@ -61,6 +51,8 @@ export default function Messages() {
                     </div>
                 </div>
             </div>
+            {window.innerWidth<560 && <BottomNavbar/>}
+
         </>
     )
 }

@@ -111,3 +111,19 @@ nav.close ~ .main-box .container-messages{
          left:250px;
      }
 }
+
+@media screen and (max-width: 560px) {
+    .container-messages{
+        left: 10px;
+        width: 95%;
+        margin-top: 10%;
+
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container-messages{
+        /* position: fixed; */
+        margin-top: 30%;
+    }
+}

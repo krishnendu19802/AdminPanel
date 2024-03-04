@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import SideNavbar from '../SideNavbar/SideNavbar'
 import './Settings.css'
 import Modal from './Modal'
+import BottomNavbar from '../BottomNavbar/BottomNavbar'
 export default function Settings() {
   // const [change,setChange]=useState({'username':'User','email':'user@gmail','password':'********'})
   console.log(document.body.classList.contains('dark'))
@@ -28,12 +29,13 @@ export default function Settings() {
   }
 
   return (
-    <div>
+    <>
       <Modal username={user.username} email={user.email} />
 
-      <SideNavbar />
-      <div className={`settings-box  px-0 mt-1 d-flex align-items-center overflow-auto `}>
-        <div className="container-settings accordion p-5  ">
+      {window.innerWidth>560 && <SideNavbar />}
+
+      <div className={`settings-box d-flex  overflow-auto `}>
+        <div className="container-settings accordion p-2  ">
           <div className="user-settings accordion-item rounded shadow  p-2">
             <h2 class="accordion-header">
               <button class="accordion-button fs-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -106,6 +108,8 @@ export default function Settings() {
           </div>
         </div>
       </div>
-    </div>
+      {window.innerWidth<560 && <BottomNavbar/>}
+
+    </>
   )
 }
