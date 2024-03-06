@@ -71,11 +71,11 @@ export default function MaidDetails() {
             <div className="container-table p-0 ">
                 <h1 className=" mx-2 mt-0 text-center">Maid Details</h1>
                 <Filter view={view} handleview={handleview} />
-                <div className="maid-table shadow rounded overflow-auto">
+                <div className="maid-table shadow rounded overflow-auto ">
 
 
                     <table class="table table-striped-columns table-hover table-bordered ">
-                        <thead className=' '>
+                        <thead className='table-dark '>
                             <tr>
                                 {view && <th scope="col">Sl. No.</th>}
                                 <th scope="col">Photo</th>

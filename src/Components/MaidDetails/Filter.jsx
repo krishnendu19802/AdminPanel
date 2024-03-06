@@ -11,10 +11,10 @@ export default function Filter(props) {
         setFilter(e.target.name)
     }
     return (
-        <div className="p-2  search-element px-5 container-fluid">
+        <div className="p-2  search-element px-5 ">
             <form onSubmit={handleaction} className="filter-form justify-content-between">
                 <div className="options-view-filter">
-                    <div className="view-select container-fluid d-flex">
+                    <div className="view-select  d-flex">
                          <button type="button" class="btn ms-auto btn-primary dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false">
                             {props.view ? 'Large' : 'Small'}
                         </button>
@@ -47,9 +47,9 @@ export default function Filter(props) {
                     </div>
                 </div>
 
-                <div className="d-flex container-fluid">
-                    <input type="text" placeholder='search' className="mx-1 search-inp" required />
-                    <button className="btn btn-success">Search</button>
+                <div className="d-flex container-fluid p-0">
+                    <input type="text" placeholder='search' className=" search-inp" required />
+                    <button className="btn btn-success mx-2">Search</button>
                 </div>
             </form>
         </div>

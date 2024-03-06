@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import './Analytics.css'
 import SideNavbar from '../SideNavbar/SideNavbar'
+import BottomNavbar from '../BottomNavbar/BottomNavbar';
 
 export default function Analytics() {
 
@@ -49,7 +50,8 @@ export default function Analytics() {
 
     return (
         <>
-            <SideNavbar />
+            {window.innerWidth > 560 && <SideNavbar />}
+
             <div className="container overflow-auto">
                 <div className="main-chart-container container-fluid p-3">
                     <h1>Startup Analytics</h1>
@@ -68,6 +70,8 @@ export default function Analytics() {
                     </div>
                 </div>
             </div>
+            {window.innerWidth < 560 && <BottomNavbar />}
+
         </>
     )
 }

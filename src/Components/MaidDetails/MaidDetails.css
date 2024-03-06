@@ -14,14 +14,14 @@
 .search-element{
     position: relative;
     width: 80%;
-    left: 270px;
+    left: 350px;
     transition: 1s all;
     justify-content: center;
     
     height: 15%;
 }
 nav.close ~ .container-table .search-element{
-    left: 80px;
+    left: 250px;
     max-width: 80%;
 }
 
@@ -80,7 +80,7 @@ td,th{
         
     }
     nav.close ~ .container-table .search-element{
-        left: 270px;
+        left: 220px;
     }
 }
 
@@ -101,9 +101,8 @@ td,th{
         height: 30vh;
     }
     .options-view-filter{
-        /* margin-bottom: 20px; */
+        
         height: 20%;
-        /* margin-top: 20px; */
     }
     
 }
