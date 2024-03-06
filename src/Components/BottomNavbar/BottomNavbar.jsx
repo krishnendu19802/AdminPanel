@@ -15,7 +15,7 @@ export default function BottomNavbar() {
                             <i className={`uil fs-1 uil-estate ${loc.pathname === '/main' ? 'text-primary' : ''}`}></i>
 
                         </Link></li>
-                        <li><Link to="/leaderboard">
+                        <li><Link to="/maiddetails">
                             <i className={`uil fs-1 uil-files-landscapes ${loc.pathname === '/leaderboard' ? 'text-primary' : ''}`}></i>
 
                         </Link></li>

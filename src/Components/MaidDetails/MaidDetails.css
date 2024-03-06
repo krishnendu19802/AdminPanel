@@ -10,6 +10,24 @@
     overflow:auto;
     transition: 1s all;
 }
+.search-element{
+    position: relative;
+    width: 80%;
+    left: 270px;
+    transition: 1s all;
+    justify-content: center;
+    height: 15%;
+}
+nav.close ~ .container-table .search-element{
+    left: 80px;
+}
+
+li a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 .address{
     width: 10%;
 }
@@ -19,4 +37,18 @@ nav.close~.container-table .maid-table{
     left: 80px;
     width: 90%;
 
+}
+td,th{
+    
+    max-width: 100px;
+    word-wrap: break-word;
+    text-align: center;
+}
+
+.dark .container-table h1{
+    color: antiquewhite;
+}
+
+.btn,.search-inp{
+    height: 60%;;
 }
