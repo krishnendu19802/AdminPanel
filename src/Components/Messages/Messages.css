@@ -121,9 +121,9 @@ nav.close ~ .main-box .container-messages{
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 380px) {
     .container-messages{
         /* position: fixed; */
-        margin-top: 30%;
+        margin-top: 90%;
     }
 }

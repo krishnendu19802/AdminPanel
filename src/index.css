@@ -82,6 +82,7 @@ nav {
     border-right: 1px solid var(--border-color);
     /* transition: var(--tran-05); */
     transition: 0.5s width;
+    z-index: 100;
 }
 
 nav.close {

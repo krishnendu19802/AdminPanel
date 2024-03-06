@@ -2,15 +2,15 @@ import React, { useState } from 'react'
 import SideNavbar from '../SideNavbar/SideNavbar'
 import './MaidDetails.css'
 import Filter from './Filter'
-import img from '../../assets/logo.webp' 
+import img from '../../assets/logo.webp'
 import BottomNavbar from '../BottomNavbar/BottomNavbar'
 export default function MaidDetails() {
-    const [view,changeView]=useState(true)
-    const handleview=(e)=>{
-      if(e.target.name=='large')
-      changeView(true)
-      else
-      changeView(false)
+    const [view, changeView] = useState(true)
+    const handleview = (e) => {
+        if (e.target.name == 'large')
+            changeView(true)
+        else
+            changeView(false)
     }
     console.log(img)
     const list = {
@@ -49,11 +49,12 @@ export default function MaidDetails() {
         let trows = main_set.map((row, index) => {
             return (
                 <tr >
+                    
                     {view && <td scope="row">{index + 1}</td>}
                     <td><img src="/src/assets/logo.webp" height={50} width={50} alt="Loading" /></td>
                     <td>{row.names}</td>
                     <td>{row.phone}</td>
-                    {view && <td>{row.address + 'kjdhkfjjbkajbdjlbalsblvbslbvlasbjlvakjdhkfjagdkjgkagsbkjjshdgjsjkdgb'}</td>}
+                    {view && <td>{row.address }</td>}
                     {view && <td>{row.aadhar}</td>}
                     {view && <td>{row.Experience}</td>}
                     <td>{row.Type}</td>
@@ -66,14 +67,14 @@ export default function MaidDetails() {
     return (
         <>
             {generate()}
-            {window.innerWidth>560 && <SideNavbar />}
+            {window.innerWidth > 560 && <SideNavbar />}
             <div className="container-table p-0 ">
                 <h1 className=" mx-2 mt-0 text-center">Maid Details</h1>
                 <Filter view={view} handleview={handleview} />
-                <div className="maid-table shadow rounded">
+                <div className="maid-table shadow rounded overflow-auto">
 
 
-                    <table class="table table-striped-columns table-hover table-bordered overflow-auto">
+                    <table class="table table-striped-columns table-hover table-bordered ">
                         <thead className=' '>
                             <tr>
                                 {view && <th scope="col">Sl. No.</th>}
@@ -81,7 +82,7 @@ export default function MaidDetails() {
                                 <th scope="col">Name</th>
                                 <th scope="col">Phone number</th>
                                 {view && <th className='address' scope="col">Address</th>}
-                                {view && <th scope="col">Aadhar</th>} 
+                                {view && <th scope="col">Aadhar</th>}
                                 {view && <th scope="col">Experience</th>}
                                 <th scope="col">Proefficient in</th>
 
