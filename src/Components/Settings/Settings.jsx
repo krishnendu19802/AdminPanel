@@ -3,12 +3,13 @@ import SideNavbar from '../SideNavbar/SideNavbar'
 import './Settings.css'
 import Modal from './Modal'
 import BottomNavbar from '../BottomNavbar/BottomNavbar'
+import { FaInstagram, FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import Calendar from './Calendar'
 export default function Settings() {
   // const [change,setChange]=useState({'username':'User','email':'user@gmail','password':'********'})
   console.log(document.body.classList.contains('dark'))
-
   const [mode, alterMode] = useState(document.body.classList.contains('dark') ? true : false)
-
+  
   const user = { 'username': 'User', 'email': 'user@gmail', 'password': '********' }
   const handleClick = (e) => {
     // console.log(e.target.name)
@@ -28,11 +29,45 @@ export default function Settings() {
 
   }
 
+  const socialaccount = [
+    { 'facebook': ['friends', '20k'] },
+    { 'instagram': ['followers', '30k'] },
+    { 'linkedin': ['followers', '1k'] },
+    { 'twitter': ['followers', '20k'] }
+  ]
+
+  const returncard = () => {
+    const sc = socialaccount.map((acc, index) => {
+      let name = Object.keys(acc)[0]
+      return (
+        <div className="col-lg-3 col-md-6 col-sm-12 my-2">
+          <div class="card " >
+            <div className={`card-header d-flex justify-content-center ${name}`}>
+              {name === 'instagram' && <FaInstagram className=" social-icon instagram-icon" />}
+              {name === 'facebook' && <FaFacebook className=" social-icon facebook-icon" />}
+              {name === 'linkedin' && <FaLinkedin className=" social-icon linkedin-icon" />}
+              {name === 'twitter' && <FaTwitter className=" social-icon twitter-icon" />}
+
+            </div>
+            <div class="card-body ">
+              <div className="container-fluid text-center fs-4">{acc[name][0]}</div>
+              <div className="container-fluid text-center fs-3">{acc[name][1]}</div>
+            </div>
+          </div>
+        </div>
+      )
+    })
+    return sc
+
+  }
+
+
   return (
     <>
+
       <Modal username={user.username} email={user.email} />
 
-      {window.innerWidth>560 && <SideNavbar />}
+      {window.innerWidth > 560 && <SideNavbar />}
 
       <div className={`settings-box d-flex  overflow-auto `}>
         <div className="container-settings accordion p-2  ">
@@ -106,9 +141,17 @@ export default function Settings() {
               </div>
             </div>
           </div>
+
+          <hr />
+          <div className="row accounts ">
+
+            {returncard()}
+
+          </div>
+          <Calendar/>
         </div>
       </div>
-      {window.innerWidth<560 && <BottomNavbar/>}
+      {window.innerWidth < 560 && <BottomNavbar />}
 
     </>
   )
