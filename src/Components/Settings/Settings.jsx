@@ -40,7 +40,7 @@ export default function Settings() {
     const sc = socialaccount.map((acc, index) => {
       let name = Object.keys(acc)[0]
       return (
-        <div className="col-lg-3 col-md-6 col-sm-12 my-2">
+        <div className="col-lg-3 col-md-6 col-sm-12 my-2 border-0">
           <div class="card " >
             <div className={`card-header d-flex justify-content-center ${name}`}>
               {name === 'instagram' && <FaInstagram className=" social-icon instagram-icon" />}
@@ -143,7 +143,7 @@ export default function Settings() {
           </div>
 
           <hr />
-          <div className="row accounts ">
+          <div className="row accounts  ">
 
             {returncard()}
 

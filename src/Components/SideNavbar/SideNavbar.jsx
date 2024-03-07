@@ -44,7 +44,7 @@ export default function SideNavbar() {
                         </Link></li>
                         <li><Link to="/maiddetails">
                             <i className={`uil uil-files-landscapes ${loc.pathname==='/maiddetails'?'text-primary':''}`}></i>
-                            <span className={`link-name ${loc.pathname==='/maiddetails'?'text-primary':''}`}>Maiddetails</span>
+                            <span className={`link-name ${loc.pathname==='/maiddetails'?'text-primary':''}`}>Maid Details</span>
                         </Link></li>
                         <li><Link to="/analytics">
                             <i className={`uil uil-chart ${loc.pathname==='/analytics'?'text-primary':''}`}></i>
