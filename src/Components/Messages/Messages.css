@@ -52,6 +52,48 @@ h1 {
     background-color: #2980b9;
 } */
 
+.dark .messages-body{
+    background-color: #4D4C4C;
+    color: #CCC;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.host-message{
+    background: linear-gradient(to right, #006400, #228B22);
+    color: aliceblue;
+
+    
+}
+
+.user-message{
+    background: linear-gradient(to right, #333333, #555555);
+    color: aliceblue;
+    
+}
+.chat-message{
+    width: 40%;
+    border-radius: 5px;
+    word-wrap: break-word;
+}
+
+.input-chat{
+    position: relative;
+    bottom: 0;
+    background: linear-gradient(to right, #90EE90, #808080);
+
+}
+
+.message_list{
+    height: 60vh;
+    overflow: hidden;
+    overflow-y: auto;
+    background: linear-gradient(to right, #90EE90, #808080);
+}
+
+
 .main-box{
     width: 100%;
     height: 100vh;
@@ -82,15 +124,12 @@ h1 {
 .dark .main-box{
     background-color: #3A3B3C;
 }
-.dark .messages-body{
-    background-color: #4D4C4C;
-    color: #CCC;
-}
+
 nav ~ .main-box .container-messages {
     left: 450px;
     transition: 1s all;
     right: 0;
-    height: 70vh;
+    height: 80vh;
     width: 45%;
 }
 nav.close ~ .main-box .container-messages{

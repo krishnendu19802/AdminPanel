@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import './Messages.css'
 import SideNavbar from '../SideNavbar/SideNavbar'
 import BottomNavbar from '../BottomNavbar/BottomNavbar'
+import { Link } from 'react-router-dom'
 export default function Messages() {
 
-    const [mode,setmode]=useState(document.body.classList.contains('dark') ? true : false)
+    const [mode, setmode] = useState(document.body.classList.contains('dark') ? true : false)
 
     // useEffect(()=>{
     //     setmode(!mode)
@@ -25,11 +26,13 @@ export default function Messages() {
         const totalchats = data.map((user) => {
             return (
                 <>
-                    <div className="indv-message p-5 d-flex  align-items-center">
-                        <div className="logo-user p-3 text-light mx-3 bg-danger rounded-circle fs-4">{user.logo}</div>
-                        <div className="name-user mx-2 fs-3">{user.name}</div>
-                        <span class="badge ms-auto text-bg-primary rounded-pill">14</span>
-                    </div>
+                    <Link to={`/messages/${user.name}`}>
+                        <div className="indv-message p-5 d-flex  align-items-center">
+                            <div className="logo-user p-3 text-light mx-3 bg-danger rounded-circle fs-4">{user.logo}</div>
+                            <div className="name-user mx-2 fs-3">{user.name}</div>
+                            <span class="badge ms-auto text-bg-primary rounded-pill">14</span>
+                        </div>
+                    </Link>
                     <hr />
                 </>
             )
@@ -38,7 +41,7 @@ export default function Messages() {
     }
     return (
         <>
-            {window.innerWidth>560 && <SideNavbar />}
+            {window.innerWidth > 560 && <SideNavbar />}
 
             <div className={`main-box mx- px-2   `}>
                 <div className="container-messages rounded-3 shadow-lg  ">
@@ -51,7 +54,7 @@ export default function Messages() {
                     </div>
                 </div>
             </div>
-            {window.innerWidth<560 && <BottomNavbar/>}
+            {window.innerWidth < 560 && <BottomNavbar />}
 
         </>
     )

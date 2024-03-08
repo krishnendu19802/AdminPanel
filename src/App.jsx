@@ -11,6 +11,7 @@ import SalesReport from './Components/SalesReport/SalesReport'
 import Messages from './Components/Messages/Messages'
 import Settings from './Components/Settings/Settings'
 import MaidDetails from './Components/MaidDetails/MaidDetails'
+import IndvMessage from './Components/Messages/IndvMessage'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,6 +29,8 @@ function App() {
           <Route exact path='/salesreport' element={<SalesReport/>}></Route>
           <Route exact path='/messages' element={<Messages/>}></Route>
           <Route exact path='/settings' element={<Settings/>}></Route>
+          <Route exact path='/messages/:username' element={<IndvMessage/>}></Route>
+
 
         </Routes>
       </BrowserRouter>
