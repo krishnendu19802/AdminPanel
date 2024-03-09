@@ -2,19 +2,20 @@ import React, { useEffect } from 'react'
 import './Analytics.css'
 import SideNavbar from '../SideNavbar/SideNavbar'
 import BottomNavbar from '../BottomNavbar/BottomNavbar';
-import Chart from './Charts';
+import imported_charts from './Charts';
 
 export default function Analytics() {
     
-    const handleclick=(e)=>{
+    const handleclick = (e) => {
         // console.log(e.target.name)
-        const clas=e.target.className.split(' ')[0]
-        Chart.Change_chart(e.target.name,clas)
+        const clas = e.target.className.split(' ')[0]
+        imported_charts.Change_chart(e.target.name, clas)
     }
-   
+
     useEffect(() => {
-        
-        Chart.Charts()
+
+        imported_charts.Charts()
+        imported_charts.targetChart()
     }, [])
 
 
@@ -46,7 +47,7 @@ export default function Analytics() {
 
 
                     <h3 className="text-center d-flex">Cooking Sales
-                    <div className="chart-buttons ms-auto">
+                        <div className="chart-buttons ms-auto">
                             <button name='CookingData' className="pie btn p-1 btn-primary " onClick={handleclick}>Pie</button>
                             <button name='CookingData' className="bar btn btn-primary mx-2 " onClick={handleclick}>Bar</button>
                             <button name='CookingData' className="line btn btn-primary mx-2 " onClick={handleclick}>Line</button>
@@ -79,6 +80,20 @@ export default function Analytics() {
                         </canvas>
 
                     </div>
+
+                    <hr />
+
+                    <h3 className="text-center d-flex my-2">
+                        Current Week Sales
+                    </h3>
+
+                    <div className="chart-container my-3 ">
+                        <canvas id="TargetData"  >
+
+                        </canvas>
+
+                    </div>
+
 
                 </div>
 

@@ -1,8 +1,14 @@
 let totalsales_data = []
 const cooking_data = [1500, 2200, 1800, 2500, 200];
 const cleaning_data = [5500, 3200, 4000, 2100, 380];
-const labels = ["Month 1", "Month 2", "Month 3", "Month 4", "Month 5"]
+const labels = ['January','February','March','April','May','June','July','August','September','October','November','December']
+const date=new Date()
+const day=date.getDay()
+const month=date.getMonth()
+
 function create_new_chart(el,name, type, data, labels) {
+    // console.log(labels)
+    // let org=labels
     const colors_for_graph = [
         'rgba(75, 192, 192, 0.9)',
         'rgba(255, 99, 132, 0.9)',
@@ -11,11 +17,11 @@ function create_new_chart(el,name, type, data, labels) {
         'rgba(255, 159, 64, 0.9)',
         'rgba(153, 102, 255, 0.9)'
     ];
-
+    
     const ordersChart = new Chart(el, {
         type: type,
         data: {
-            labels: labels,
+            labels: labels.slice(0,month+1),
             datasets: [{
                 label: name,
                 data: data,
@@ -35,11 +41,6 @@ function create_new_chart(el,name, type, data, labels) {
 }
 
 function charts() {
-
-    // {if(window.innerWidth<1000)
-    //   window.alert('This is better visible in desktop mode')
-    // }
-
 
     for (let i = 0; i < cooking_data.length; i++) {
         totalsales_data.push(cooking_data[i] + cleaning_data[i])
@@ -91,4 +92,58 @@ function change_chart(name, type) {
         create_new_chart(mychart,'Cleaning Data', type, cleaning_data, labels)
 }
 
-export default { Charts: charts, Change_chart: change_chart }
+function targetChart(){
+    
+    const ctx = document.getElementById('TargetData');
+    let existingChart = Chart.getChart(ctx);
+    if (existingChart) {
+        existingChart.destroy();
+    }
+    const myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].splice(0,day+1),
+            datasets: [
+                {
+                    label: 'Cleaning Service',
+                    backgroundColor: 'rgba(75, 192, 192, 1)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1,
+                    hoverBackgroundColor: 'rgba(75, 192, 192, 0.4)',
+                    hoverBorderColor: 'rgba(75, 192, 192, 1)',
+                    data: [20, 40, 15, 35, 45, 50, 60].splice(0,day+1),
+                },
+                {
+                    label: 'Cooking Service',
+                    backgroundColor: 'rgba(153, 102, 255, 1)',
+                    borderColor: 'rgba(153, 102, 255, 1)',
+                    borderWidth: 1,
+                    hoverBackgroundColor: 'rgba(153, 102, 255, 0.4)',
+                    hoverBorderColor: 'rgba(153, 102, 255, 1)',
+                    data: [30, 50, 20, 40, 55, 65, 75].splice(0,day+1),
+                },
+                {
+                    label: 'Target',
+                    backgroundColor: 'rgba(255, 99, 132, 1)',
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 1,
+                    hoverBackgroundColor: 'rgba(255, 99, 132, 0.4)',
+                    hoverBorderColor: 'rgba(255, 99, 132, 1)',
+                    data: [50, 80, 40, 70, 85, 100, 110].splice(0,day+1),
+                    type: 'line',
+                },
+            ],
+        },
+        options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                    }
+                }]
+            }
+        },
+    });
+}
+
+export default { Charts: charts, Change_chart: change_chart , targetChart:targetChart}
