@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SideNavbar from '../SideNavbar/SideNavbar'
 import './MaidDetails.css'
 import Filter from './Filter'
-import img from '../../assets/logo.webp'
+import img from '/src/assets/logo.webp'
 import BottomNavbar from '../BottomNavbar/BottomNavbar'
 export default function MaidDetails() {
     const [view, changeView] = useState(true)

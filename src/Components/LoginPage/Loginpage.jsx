@@ -1,7 +1,7 @@
 import React from 'react'
 import './Loginpage.css'
 import { useNavigate } from 'react-router-dom'
-
+import img from '../../assets/logo.webp'
 export default function Loginpage() {
     const navigate = useNavigate();
     const handleSubmit = (event) => {
@@ -13,7 +13,7 @@ export default function Loginpage() {
     return (
         <div className="outer overflow-hidden" >
             <div className="container">
-                <img src="src/assets/logo.webp" alt="error" className="admin-logo" />
+                <img src={img} alt="error" className="admin-logo" />
                 <h2>Homaid Services</h2>
                 <h2>Admin Panel</h2>
                 <form id="signInForm" method="post" onSubmit={handleSubmit}>
