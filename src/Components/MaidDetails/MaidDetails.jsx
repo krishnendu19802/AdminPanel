@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import SideNavbar from '../SideNavbar/SideNavbar'
 import './MaidDetails.css'
 import Filter from './Filter'
-import img from '/src/assets/logo.webp'
+import img from '../../assets/logo.webp'
 import BottomNavbar from '../BottomNavbar/BottomNavbar'
 export default function MaidDetails() {
     const [view, changeView] = useState(true)
@@ -51,7 +51,7 @@ export default function MaidDetails() {
                 <tr >
                     
                     {view && <td scope="row">{index + 1}</td>}
-                    <td><img src="/src/assets/logo.webp" height={50} width={50} alt="Loading" /></td>
+                    <td><img src={img} height={50} width={50} alt="Loading" /></td>
                     <td>{row.names}</td>
                     <td>{row.phone}</td>
                     {view && <td>{row.address }</td>}
