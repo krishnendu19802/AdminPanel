@@ -65,7 +65,7 @@ export default function Calendar() {
   }
   const month = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   return (
-    <div className="calendar rounded my-2 p-2">
+    <div className="calendar shadow rounded my-2 p-2">
       <h1 className="bg-success rounded-top text-center">Calendar </h1>
       <h2 className='d-flex justify-content-between'>
         <button name='previous' className="btn-secondary rounded border-0  me-auto" onClick={handlecalendarclick}>{'<'}</button>

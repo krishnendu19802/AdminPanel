@@ -60,4 +60,9 @@ const messages = [
         time: "10:45 AM",
       },
   ];
-export default messages
+
+function addmessage(obj){
+  messages.push(obj)
+  console.log(messages)
+}
+export default {messages:messages,addmessage:addmessage}

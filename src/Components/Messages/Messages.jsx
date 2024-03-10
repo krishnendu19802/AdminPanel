@@ -27,7 +27,7 @@ export default function Messages() {
             return (
                 <>
                     <Link to={`/messages/${user.name}`}>
-                        <div className="indv-message p-5 d-flex  align-items-center">
+                        <div className="indv-message py-5 px-1 d-flex  align-items-center">
                             <div className="logo-user p-3 text-light mx-3 bg-danger rounded-circle fs-4">{user.logo}</div>
                             <div className="name-user mx-2 fs-3">{user.name}</div>
                             <span class="badge ms-auto text-bg-primary rounded-pill">14</span>

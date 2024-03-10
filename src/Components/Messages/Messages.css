@@ -52,107 +52,118 @@ h1 {
     background-color: #2980b9;
 } */
 
-.dark .messages-body{
+.dark .messages-body {
     background-color: #4D4C4C;
     color: #CCC;
 }
-a{
+
+a {
     text-decoration: none;
     color: inherit;
 }
 
-.host-message{
+.host-message {
     background: linear-gradient(to right, #006400, #228B22);
     color: aliceblue;
 
-    
+
 }
 
-.user-message{
+.user-message {
     background: linear-gradient(to right, #333333, #555555);
     color: aliceblue;
-    
+
 }
-.chat-message{
+
+.chat-message {
     width: 40%;
     border-radius: 5px;
     word-wrap: break-word;
 }
 
-.input-chat{
+.input-chat {
     position: relative;
     bottom: 0;
     background: linear-gradient(to right, #90EE90, #808080);
 
 }
 
-.message_list{
+.message_list {
     height: 60vh;
     overflow: hidden;
     overflow-y: auto;
     background: linear-gradient(to right, #90EE90, #808080);
 }
 
+.message-user{
+    height: 6vh;
+}
 
-.main-box{
+.main-box {
     width: 100%;
     height: 100vh;
     background-color: white;
     display: flex;
     align-items: center;
-    overflow:visible;
+    overflow: visible;
 }
-.container-messages{
+
+.container-messages {
     /* background-color: pink; */
     /* max-width: 00px; Added spaces around the minus sign */
     position: relative;
 
 }
 
-.heading{
+.heading {
     height: 80px;
 }
-.messages-body{
+
+.messages-body {
     height: calc(100% - 80px);
     /* background-color: aqua; */
     overflow: auto;
 }
 
-.indv-message{
+.indv-message {
     height: 2rem;
 }
-.dark .main-box{
+
+.dark .main-box {
     background-color: #3A3B3C;
 }
 
-nav ~ .main-box .container-messages {
+nav~.main-box .container-messages {
     left: 450px;
     transition: 1s all;
     right: 0;
     height: 80vh;
     width: 45%;
 }
-nav.close ~ .main-box .container-messages{
+
+nav.close~.main-box .container-messages {
     /* width:calc(100%-73px); */
-    left:400px;
+    left: 400px;
     width: 50%;
     /* transform: scaleX(2); */
 }
+
 @media screen and (max-width: 1000px) {
-    nav.close ~ .main-box .container-messages{
+    nav.close~.main-box .container-messages {
         /* width:calc(100%-250px); */
-        left:300px;
+        left: 300px;
         width: 45%;
-     }
-     nav ~ .main-box .container-messages{
-         /* width:calc(100%-73px); */
-         width: 50%;
-         left:250px;
-     }
+    }
+
+    nav~.main-box .container-messages {
+        /* width:calc(100%-73px); */
+        width: 50%;
+        left: 250px;
+    }
 }
 
 @media screen and (max-width: 560px) {
-    .container-messages{
+    .container-messages {
         left: 10px;
         width: 95%;
         margin-top: 10%;
@@ -161,8 +172,15 @@ nav.close ~ .main-box .container-messages{
 }
 
 @media screen and (max-width: 380px) {
-    .container-messages{
+    .container-messages {
         /* position: fixed; */
         margin-top: 90%;
+    }
+}
+
+@media screen and (max-width: 380px) {
+    .main-box {
+        margin-top: 150px;
+
     }
 }
