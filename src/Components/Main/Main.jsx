@@ -14,7 +14,7 @@ export default function Main() {
 
             <section className={`dashboard `} >
 
-                <div className="dash-content overflow-auto  " >
+                <div className="dash-content  " >
                     <div className="overview">
                         <div className="top-part fixed mb-2  ">
                             <div className="title me-auto">

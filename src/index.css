@@ -599,7 +599,7 @@ nav.close~.dashboard .top {
     .dashboard {
         left: 0;
         width: 100%;
-        margin-top: 20%;
+        margin-top: 25%;
     }
 
     .dash-content {
@@ -607,13 +607,27 @@ nav.close~.dashboard .top {
         margin-top: 0 !important;
     }
 }
-@media (max-width: 400px) {
+@media (max-width: 380px) {
     .dash-content {
         padding-top: 50px;
         
     }
     .dashboard{
         top: 100px;
+        /* margin-top: 5vh; */
+    }
+    
+    
+}
+
+@media (max-width: 300px) {
+    .dash-content {
+        padding-top: 50px;
+        
+    }
+    .dashboard{
+        top: 100px;
+        margin-top: 20vh;
     }
     
     

@@ -5,24 +5,43 @@ body {
     background-color: #f4f4f4;
 }
 
-.container {
-    max-width: 100%;
-    height: 90vh;
-    margin: 50px auto;
+.container-analysis {
+    position: relative;
+    left: 260px;
+    max-width: 60%;
+    height: 95vh;
+    /* margin: 50px auto; */
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: 1s all;
 }
-.main-chart-container{
-    width: 650px;
+.container-analysis h1{
+   height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-canvas{
+
+nav.close~.container-analysis {
+    left: 260px;
+    /* max-width: 65%; */
+}
+
+.main-chart-container {
+    width: 700px;
+}
+
+canvas {
     background: transparent;
+    max-width: 100%;
     min-height: 250px;
 }
 
 .chart-container {
     margin-top: 20px;
+    width: 100%;
+    margin-right: 0;
 }
 
 .data-summary {
@@ -33,20 +52,66 @@ canvas{
     color: #333;
 } */
 
-h3{
+h3 {
     height: 10vh;
-}
-h3 button{
-    width: 50px;
-}
-canvas {
-    max-width: 100%;
+    display: flex;
 }
 
-@media (max-width: 800px) {
-    .container{
-        max-width: 350px;
-        margin-right: 3%;
-    }
+h3 button {
+    width: 50px;
     
+}
+
+
+
+
+@media (max-width: 1000px) {
+    .container-analysis {
+        max-width: 70%;
+        margin-right: 3%;
+        left: 90px;
+    }
+
+    h3 button {
+        width: 40px;
+        height: 10px;
+        font-size: small;
+    }
+
+    .main-chart-container {
+        width: 500px;
+    }
+
+    nav.close~.container-analysis {
+        left: 250px;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    .container-analysis {
+        max-width: 100%;
+        margin-right: 3%;
+        left: 10px;
+        margin-top: 10%;
+        overflow-x: scroll;
+        padding: 0;
+    }
+    h3 div{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    h3 div button {
+        width: 60px;
+        max-height: 50px;
+        font-size: small;
+    }
+    .main-chart-container{
+        width: 100%;
+    }
+    h3{
+        display: block;
+    }
 }

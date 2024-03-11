@@ -24,10 +24,10 @@ export default function Analytics() {
             {window.innerWidth < 1000 ? alert('This is better visible in Desktop mode') : ''}
             {window.innerWidth > 560 && <SideNavbar />}
 
-            <div className="container overflow-auto">
-                <h1 className="text-center">Analytics</h1>
-                <div className="main-chart-container container-fluid p-3">
-                    <h3 className="text-center d-flex">Total Sales
+            <div className="container-analysis overflow-auto rounded-top">
+                <h1 className="text-center bg-success rounded-top ">Analytics</h1>
+                <div className="main-chart-container  p-3">
+                    <h3 className="text-center ">Total Sales
                         <div className="chart-buttons ms-auto">
                             <button name='TotalSales' className="pie btn p-1 btn-primary " onClick={handleclick}>Pie</button>
                             <button name='TotalSales' className="bar btn btn-primary mx-2 " onClick={handleclick}>Bar</button>
@@ -46,7 +46,7 @@ export default function Analytics() {
                     <hr />
 
 
-                    <h3 className="text-center d-flex">Cooking Sales
+                    <h3 className="text-center ">Cooking Sales
                         <div className="chart-buttons ms-auto">
                             <button name='CookingData' className="pie btn p-1 btn-primary " onClick={handleclick}>Pie</button>
                             <button name='CookingData' className="bar btn btn-primary mx-2 " onClick={handleclick}>Bar</button>
@@ -63,11 +63,11 @@ export default function Analytics() {
                     </div>
 
                     <hr />
-                    <h3 className="text-center d-flex">
+                    <h3 className="text-center ">
                         Cleaning Sales
                         <div className="chart-buttons ms-auto">
                             <button name='CleaningData' className="pie btn p-1 btn-primary " onClick={handleclick}>Pie</button>
-                            <button name='CleaningData' className="bar btn btn-primary mx-2 " onClick={handleclick}>Bar</button>
+                            <button name='CleaningData' className="bar btn btn-primary mx-2 px-1" onClick={handleclick}>Bar</button>
                             <button name='CleaningData' className="line btn btn-primary mx-2 " onClick={handleclick}>Line</button>
 
 
@@ -83,7 +83,7 @@ export default function Analytics() {
 
                     <hr />
 
-                    <h3 className="text-center d-flex my-2">
+                    <h3 className="text-center d-flex justify-content-center my-2 pt-3">
                         Current Week Sales
                     </h3>
 

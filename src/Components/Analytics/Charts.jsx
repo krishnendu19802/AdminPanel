@@ -1,14 +1,16 @@
 let totalsales_data = []
-const cooking_data = [1500, 2200, 1800, 2500, 200];
-const cleaning_data = [5500, 3200, 4000, 2100, 380];
-const labels = ['January','February','March','April','May','June','July','August','September','October','November','December']
-const date=new Date()
-const day=date.getDay()
-const month=date.getMonth()
+const cooking_data = [1500, 2200, 1800, 2500, 200, 1500, 2200, 1800, 2500, 200, 1500, 1000];
+const cleaning_data = [5500, 3200, 4000, 2100, 380, 5500, 3200, 4000, 2100, 380, 4500, 2700];
+const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+const date = new Date()
+const day = date.getDay()
+const month = date.getMonth()
 
-function create_new_chart(el,name, type, data, labels) {
+function create_new_chart(el, name, type, data, labels) {
     // console.log(labels)
     // let org=labels
+    el.width = 400; // Set the width to your desired value
+    el.height = 200;
     const colors_for_graph = [
         'rgba(75, 192, 192, 0.9)',
         'rgba(255, 99, 132, 0.9)',
@@ -17,17 +19,17 @@ function create_new_chart(el,name, type, data, labels) {
         'rgba(255, 159, 64, 0.9)',
         'rgba(153, 102, 255, 0.9)'
     ];
-    
+
     const ordersChart = new Chart(el, {
         type: type,
         data: {
-            labels: labels.slice(0,month+1),
+            labels: labels.slice(0, month+1),
             datasets: [{
                 label: name,
                 data: data,
                 backgroundColor: colors_for_graph,
                 borderWidth: 1,
-                fill:true
+                fill: true
             }]
         },
         options: {
@@ -53,7 +55,7 @@ function charts() {
     if (existingChart) {
         existingChart.destroy();
     }
-    create_new_chart(totalSales, 'Total Sales','bar', totalsales_data, labels)
+    create_new_chart(totalSales, 'Total Sales', 'bar', totalsales_data, labels)
 
     //for cooking 
     const totalcooking = document.getElementById('CookingData');
@@ -61,7 +63,7 @@ function charts() {
     if (existingChart) {
         existingChart.destroy();
     }
-    create_new_chart(totalcooking,'Cooking', 'bar', cooking_data, labels)
+    create_new_chart(totalcooking, 'Cooking', 'bar', cooking_data, labels)
 
     //for cleaning
 
@@ -70,30 +72,30 @@ function charts() {
     if (existingChart) {
         existingChart.destroy();
     }
-    create_new_chart(totalcleaning,'Cleaning' ,'bar', cleaning_data, labels)
+    create_new_chart(totalcleaning, 'Cleaning', 'bar', cleaning_data, labels)
 
 }
 
 function change_chart(name, type) {
     console.log(name, type)
-    if (totalsales_data.length > cooking_data.length)
-        totalsales_data = totalsales_data.slice(0, cooking_data.length)
-    console.log(totalsales_data)
+    // if (totalsales_data.length > cooking_data.length)
+    //     totalsales_data = totalsales_data.slice(0, cooking_data.length)
+    // console.log(totalsales_data)
     const mychart = document.getElementById(name);
     let existingChart = Chart.getChart(mychart);
     if (existingChart) {
         existingChart.destroy();
     }
     if (name === 'TotalSales')
-        create_new_chart(mychart,'Total Sales', type, totalsales_data, labels)
+        create_new_chart(mychart, 'Total Sales', type, totalsales_data.slice(0,month+1), labels)
     else if (name === 'CookingData')
-        create_new_chart(mychart,'Cooking Data', type, cooking_data, labels)
+        create_new_chart(mychart, 'Cooking Data', type, cooking_data.slice(0,month+1), labels)
     else
-        create_new_chart(mychart,'Cleaning Data', type, cleaning_data, labels)
+        create_new_chart(mychart, 'Cleaning Data', type, cleaning_data.slice(0,month+1), labels)
 }
 
-function targetChart(){
-    
+function targetChart() {
+
     const ctx = document.getElementById('TargetData');
     let existingChart = Chart.getChart(ctx);
     if (existingChart) {
@@ -102,7 +104,7 @@ function targetChart(){
     const myChart = new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].splice(0,day+1),
+            labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'].splice(0, day + 1),
             datasets: [
                 {
                     label: 'Cleaning Service',
@@ -111,7 +113,7 @@ function targetChart(){
                     borderWidth: 1,
                     hoverBackgroundColor: 'rgba(75, 192, 192, 0.4)',
                     hoverBorderColor: 'rgba(75, 192, 192, 1)',
-                    data: [20, 40, 15, 35, 45, 50, 60].splice(0,day+1),
+                    data: [20, 40, 15, 35, 45, 50, 60].splice(0, day + 1),
                 },
                 {
                     label: 'Cooking Service',
@@ -120,7 +122,7 @@ function targetChart(){
                     borderWidth: 1,
                     hoverBackgroundColor: 'rgba(153, 102, 255, 0.4)',
                     hoverBorderColor: 'rgba(153, 102, 255, 1)',
-                    data: [30, 50, 20, 40, 55, 65, 75].splice(0,day+1),
+                    data: [30, 50, 20, 40, 55, 65, 75].splice(0, day + 1),
                 },
                 {
                     label: 'Target',
@@ -129,7 +131,7 @@ function targetChart(){
                     borderWidth: 1,
                     hoverBackgroundColor: 'rgba(255, 99, 132, 0.4)',
                     hoverBorderColor: 'rgba(255, 99, 132, 1)',
-                    data: [50, 80, 40, 70, 85, 100, 110].splice(0,day+1),
+                    data: [50, 80, 40, 70, 85, 100, 110].splice(0, day + 1),
                     type: 'line',
                 },
             ],
@@ -146,4 +148,4 @@ function targetChart(){
     });
 }
 
-export default { Charts: charts, Change_chart: change_chart , targetChart:targetChart}
+export default { Charts: charts, Change_chart: change_chart, targetChart: targetChart }

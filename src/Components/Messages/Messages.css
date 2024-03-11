@@ -166,7 +166,7 @@ nav.close~.main-box .container-messages {
     .container-messages {
         left: 10px;
         width: 95%;
-        margin-top: 10%;
+        margin-top: 15%;
 
     }
 }
@@ -174,13 +174,22 @@ nav.close~.main-box .container-messages {
 @media screen and (max-width: 400px) {
     .container-messages {
         /* position: fixed; */
-        margin-top: 90%;
+        /* margin-top: 90%; */
+        margin-top: 120px;
+
     }
 }
 
 @media screen and (max-width: 380px) {
     .main-box {
         margin-top: 150px;
+
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .main-box {
+        margin-top: 200px;
 
     }
 }
