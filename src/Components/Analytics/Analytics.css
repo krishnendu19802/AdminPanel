@@ -71,10 +71,18 @@ h3 button {
         margin-right: 3%;
         left: 90px;
     }
-
-    h3 button {
-        width: 40px;
-        height: 10px;
+    h3{
+        display: block;
+    }
+    h3 div{
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    h3 div button {
+        width: 60px;
+        max-height: 50px;
         font-size: small;
     }
 

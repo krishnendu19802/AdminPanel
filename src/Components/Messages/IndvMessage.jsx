@@ -54,7 +54,7 @@ useEffect(()=>{
         <>
 
             {window.innerWidth > 560 && <SideNavbar />}
-            <div className={`main-box  px-2   `}style={{'marginTop':'50px'}}>
+            <div className={`main-box  px-2   `}style={{'marginTop':'0px'}}>
                 <div className="container-messages rounded-3 shadow-lg  "
                 style={{'marginTop':'0px'}}>
                     <h3 className=" message-user bg-primary  text-center rounded-top mb-0 p-2">{params}</h3>
