@@ -89,7 +89,7 @@ a {
 }
 
 .message_list {
-    height: 60vh;
+    height: 70vh;
     overflow: hidden;
     overflow-y: auto;
     background: linear-gradient(to right, #90EE90, #808080);
@@ -108,7 +108,7 @@ a {
     overflow: visible;
 }
 
-.container-messages {
+.container-messages,.message_list_container {
     /* background-color: pink; */
     /* max-width: 00px; Added spaces around the minus sign */
     position: relative;
@@ -133,7 +133,7 @@ a {
     background-color: #3A3B3C;
 }
 
-nav~.main-box .container-messages {
+nav~.main-box .container-messages ,.message_list_container{
     left: 450px;
     transition: 1s all;
     right: 0;
@@ -141,7 +141,7 @@ nav~.main-box .container-messages {
     width: 45%;
 }
 
-nav.close~.main-box .container-messages {
+nav.close~.main-box .container-messages,.message_list_container {
     /* width:calc(100%-73px); */
     left: 400px;
     width: 65%;
@@ -149,13 +149,13 @@ nav.close~.main-box .container-messages {
 }
 
 @media screen and (max-width: 1000px) {
-    nav.close~.main-box .container-messages {
+    nav.close~.main-box .container-messages ,.message_list_container{
         /* width:calc(100%-250px); */
         left: 300px;
         width: 60%;
     }
 
-    nav~.main-box .container-messages {
+    nav~.main-box .container-messages ,.message_list_container{
         /* width:calc(100%-73px); */
         width: 75%;
         left: 150px;
@@ -163,7 +163,7 @@ nav.close~.main-box .container-messages {
 }
 
 @media screen and (max-width: 560px) {
-    .container-messages {
+    .container-messages ,.message_list_container{
         left: 10px;
         width: 95%;
         margin-top: 15%;
@@ -172,7 +172,7 @@ nav.close~.main-box .container-messages {
 }
 
 @media screen and (max-width: 400px) {
-    .container-messages {
+    .container-messages ,.message_list_container{
         /* position: fixed; */
         /* margin-top: 90%; */
         margin-top: 120px;
@@ -185,6 +185,9 @@ nav.close~.main-box .container-messages {
         margin-top: 150px;
 
     }
+    /* .main-box-messages{
+        margin-top: 0px;
+    } */
 }
 
 @media screen and (max-width: 300px) {
