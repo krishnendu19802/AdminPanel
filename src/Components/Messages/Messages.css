@@ -144,7 +144,7 @@ nav~.main-box .container-messages {
 nav.close~.main-box .container-messages {
     /* width:calc(100%-73px); */
     left: 400px;
-    width: 50%;
+    width: 65%;
     /* transform: scaleX(2); */
 }
 
@@ -152,13 +152,13 @@ nav.close~.main-box .container-messages {
     nav.close~.main-box .container-messages {
         /* width:calc(100%-250px); */
         left: 300px;
-        width: 45%;
+        width: 60%;
     }
 
     nav~.main-box .container-messages {
         /* width:calc(100%-73px); */
-        width: 50%;
-        left: 250px;
+        width: 75%;
+        left: 150px;
     }
 }
 
@@ -171,7 +171,7 @@ nav.close~.main-box .container-messages {
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 400px) {
     .container-messages {
         /* position: fixed; */
         margin-top: 90%;
